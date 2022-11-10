@@ -14,12 +14,14 @@ while number > 0:
     number = number//2
 
 print('Числото в двуична бройна система: ')
-print(str[::-1])
+new_str = str[::-1]
+print(new_str)
 
-if str[::-1][bit - 1] == '1':
+if str[bit] == '1':
     print('yes')
 else:
     print('no')
+
 
 
 
