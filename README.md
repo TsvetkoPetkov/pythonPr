@@ -1,2 +1,2 @@
 # pythonPr
-Tsvetko Petkov Homeworks
+Tsvetko Petkov - Homeworks
