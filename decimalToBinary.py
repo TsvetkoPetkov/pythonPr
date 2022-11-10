@@ -13,7 +13,7 @@ while number > 0:
         str += '0'
     number = number//2
 
-print('Числото в двуична бройна система: ')
+print('Числото в двоична бройна система: ')
 new_str = str[::-1]
 print(new_str)
 
