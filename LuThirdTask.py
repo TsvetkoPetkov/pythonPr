@@ -1,0 +1,13 @@
+text = input()
+
+d = {}
+counter = 0
+for i in text:
+    d[i] = counter
+    for j in text:
+        if i == j:
+            counter += 1
+
+
+print(d)
+
