@@ -1,1 +1,25 @@
+n = int(input())
+d = {}
 
+for i in range(n):
+    key = input()
+    value = input()
+
+    if value.isnumeric():
+        value = int(value)
+
+    d[key] = value
+
+m = int(input())
+s = []
+
+for _ in range(m):
+    list_value = input()
+    if list_value in d.keys():
+        s.append(d[list_value])
+        del d[list_value]
+    else:
+        s.append(list_value)
+
+print(d)
+print(s)
