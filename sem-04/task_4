@@ -1,0 +1,53 @@
+def input_nums(n):
+    if n.isnumeric():
+        n_to_int = int(n)
+        s = []
+        for i in range(n_to_int):
+            element = input()
+            if element.isnumeric():
+                n_el = int(element)
+                s.append(n_el)
+        return s
+    else:
+        m = []
+        return m
+
+
+n = input()
+
+
+def sum_list(lst):
+    list_sum = 0
+    for i in range(len(lst)):
+        if type(lst[i]) != str:
+            list_sum += lst[i]
+        if type(lst[i]) == str:
+            if lst[i].isnumeric():
+                to_int = int(lst[i])
+                list_sum += to_int
+
+    return list_sum
+
+
+def max_of_two(a, b):
+    if type(a) != str and type(b) != str:
+        if a > b:
+            return a
+        elif b > a:
+            return b
+        elif a == b:
+            return a
+
+    elif type(a) == str and type(b) == int:
+        return b
+    elif type(a) == str and type(b) == float:
+        return b
+    elif type(a) == int and type(b) == str:
+        return a
+    elif type(a) == float and type(b) == str:
+        return a
+
+
+print(input_nums(n))
+print(sum_list([1, "a", 3.14, "5"]))
+print(max_of_two(21.8, 13.5))
