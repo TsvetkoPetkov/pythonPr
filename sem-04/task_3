@@ -1,6 +1,9 @@
 def list_avg(lst, multiplier=1):
     lst_sum = 0
     average_list = []
+    if type(multiplier) != int:
+        print('Error: Invalid multiplier!')
+        return
     for i in range(len(lst)):
         if type(lst[i]) == str:
             if lst[i].isnumeric():
@@ -22,7 +25,8 @@ def list_avg(lst, multiplier=1):
     if len(average_list) != 0:
         return lst_sum/len(average_list)
     else:
-        return "Error: Division by zero"
+        print("Error: Division by zero")
+        return
 
 
-print(list_avg(['4', 1.5, "@7$", 3.5, (1, "hi")]))
+print(list_avg(['6', 3, 3.0], 2))
