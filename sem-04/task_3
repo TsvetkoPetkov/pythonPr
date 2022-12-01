@@ -1,0 +1,28 @@
+def list_avg(lst, multiplier=1):
+    lst_sum = 0
+    average_list = []
+    for i in range(len(lst)):
+        if type(lst[i]) == str:
+            if lst[i].isnumeric():
+                n = int(lst[i])
+                if type(multiplier) == int:
+                    n *= multiplier
+                lst_sum += n
+                average_list.append(n)
+        elif type(lst[i]) == int:
+            if type(multiplier) == int:
+                lst[i] *= multiplier
+            lst_sum += lst[i]
+            average_list.append(lst[i])
+        elif type(lst[i]) == float:
+            if type(multiplier) == int:
+                lst[i] *= multiplier
+            lst_sum += lst[i]
+            average_list.append(lst[i])
+    if len(average_list) != 0:
+        return lst_sum/len(average_list)
+    else:
+        return "Error: Division by zero"
+
+
+print(list_avg(['4', 1.5, "@7$", 3.5, (1, "hi")]))
