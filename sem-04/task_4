@@ -1,20 +1,13 @@
 def input_nums(n):
-    if n.isnumeric():
-        n_to_int = int(n)
-        s = []
-        for i in range(n_to_int):
-            element = input()
-            if element.isnumeric():
-                n_el = int(element)
-                s.append(n_el)
-        return s
-    else:
-        m = []
-        return m
-
-
-n = input()
-print(input_nums(n))
+    s = []
+    if type(n) != int:
+        return []
+    for i in range(n):
+        el = input()
+        if el.isnumeric():
+            new_el = int(el)
+            s.append(new_el)
+    return s
 
 
 def sum_list(lst):
@@ -28,9 +21,6 @@ def sum_list(lst):
                 list_sum += to_int
 
     return list_sum
-
-
-print(sum_list([1, "a", 3.14, "5"]))
 
 
 def max_of_two(a, b):
@@ -52,7 +42,9 @@ def max_of_two(a, b):
         return a
 
 
-print(max_of_two(21.8, 13.5))
+print(max_of_two(sum_list([4, "AA@", 3.12, "1"]), "9.2"))
 
 
-max_of_two(sum_list(input_nums(n)), sum_list(input_nums(n)))
+
+
+
