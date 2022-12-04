@@ -1,0 +1,36 @@
+class MissingParameterError:
+    pass
+
+class InvalidParameter(Exception):
+    pass
+
+class InvalidParameterError(Exception):
+    def __init__(self, invalid_param, *args):
+        output = f"Invalid class parameter: {invalid_param}"
+        super().__init__(output, *args)
+
+try:
+    raise InvalidParameter("name")
+
+except:
+    print(f"Invalid class parameter: ")
+
+
+class JungleAnimal:
+    def __init__(self, name, age, sound):
+        self.name = name
+        self.age = age
+        self.sound = sound
+
+    def make_sound(self, name, age, sound):
+        
+        
+
+    def print(self, name, age, sound):
+        
+
+    def daily_task(self):
+        pass
+
+
+
