@@ -1,19 +1,27 @@
 class MissingParameterError:
     pass
 
+
 class InvalidParameter(Exception):
     pass
+
 
 class InvalidParameterError(Exception):
     def __init__(self, invalid_param, *args):
         output = f"Invalid class parameter: {invalid_param}"
         super().__init__(output, *args)
 
-try:
-    raise InvalidParameter("name")
 
-except:
-    print(f"Invalid class parameter: ")
+class InvalidAgeError(InvalidParameterError):
+    def __init__(self, age, *args):
+        output = f"Invalid parameter: {age}"
+        super().__init__(output, *args)
+
+
+class InvalidSoundError(InvalidParameterError):
+    def __init__(self, sound, *args):
+        output = f"Invalid parameter: {sound}"
+        super().__init__(output, *args)
 
 
 class JungleAnimal:
@@ -22,15 +30,90 @@ class JungleAnimal:
         self.age = age
         self.sound = sound
 
-    def make_sound(self, name, age, sound):
-        
-        
+        if type(name) != str:
+            raise InvalidParameterError(name)
 
-    def print(self, name, age, sound):
-        
+        if type(age) != int:
+            raise InvalidAgeError
+
+        if type(sound) != str:
+            raise InvalidSoundError
+
+    def make_sound(self):
+        return f"{self.name} says {self.sound}!"
+
+    def print(self):
+        pass
 
     def daily_task(self):
         pass
+
+
+class Jaguar(JungleAnimal):
+    def __init__(self,  name, age, sound):
+        super().__init__(name, age, sound)
+        if age > 15:
+            raise InvalidAgeError(age)
+
+        r_counter = 0
+
+        for _ in sound:
+            if _ == "r":
+                r_counter += 1
+
+        if r_counter < 2:
+            raise InvalidSoundError
+
+    def print(self):
+        print(f"Jaguar({self.name}, {self.age}, {self.sound})")
+
+    def daily_task(self, animals):
+        for _ in range(len(animals)):
+            if animals[i] == "Lemur" or animals[i] == "Human":
+                animals.remove(animals[i])
+        print(f"{self.name} the Jaguar hunted down")
+
+
+class Lemur(JungleAnimal):
+    def __init__(self,  name, age, sound):
+        super().__init__(name, age, sound)
+
+        if age > 10:
+            raise InvalidAgeError
+
+        e_counter = 0
+
+        for j in sound:
+            if j == "e":
+                e_counter += 1
+
+        if e_counter == 0:
+            raise InvalidSoundError
+
+    def print(self):
+        print(f"Lemur({self.name}, {self.age}, {self.sound})")
+
+          
+class Human(JungleAnimal):
+    def __init__(self, name, age, sound):
+        super().__init__(name, age, sound)
+
+        if age > 10:
+            raise InvalidAgeError
+
+        e_counter = 0
+
+        for j in sound:
+            if j == "e":
+                e_counter += 1
+
+        if e_counter == 0:
+            raise InvalidSoundError
+
+
+class Building:
+    def __init__(self, type):
+        self.type = type
 
 
 
