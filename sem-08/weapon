@@ -1,0 +1,4 @@
+class Weapon:
+    def __init__(self, wp_type, attack):
+        self.attack = attack
+        self.wp_type = wp_type
