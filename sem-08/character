@@ -1,0 +1,6 @@
+class Character:
+    def __init__(self, name, sex, ch_class):
+        av_roles = ["Warrior", "Archer", "Mage"]
+        self.name = name
+        self.sex = sex
+        self.ch_class = ch_class
